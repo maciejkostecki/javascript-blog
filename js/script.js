@@ -22,23 +22,70 @@ function titleClickHandler(event){
 	}
 
   /* [DONE] get 'href' attribute from the clicked link */
-	let articleID = clickedElement.getAttribute("href");
-	articleID = articleID.substr(1); // tu błąd w opisie zadania czy liczyliście na problem solvin' ? :D
+	let articleID = clickedElement.getAttribute('href');
+	articleID = articleID.substr(1); 
 	console.log(articleID);
 
   /* [DONE] find the correct article using the selector (value of 'href' attribute) */
-	const selectedArticle = document.getElementById(articleID);  // .querySelector jest w czymś lepszy w tej sytuacji?
+	const selectedArticle = document.getElementById(articleID);  
 	console.log(selectedArticle);
 
   /* [DONE] add class 'active' to the correct article */
 	selectedArticle.classList.add('active');
 }
 
-const links = document.querySelectorAll('.titles a');
+const optArticleSelector = '.post',
+  optTitleSelector = '.post-title',
+  optTitleListSelector = '.titles';
 
-for(let link of links){
-  link.addEventListener('click', titleClickHandler);
+function generateTitleLinks(){
+
+  /* [ DONE ] remove contents of titleList */
+	const titleLinks = document.querySelector(optTitleListSelector);
+	titleLinks.innerHTML = '';
+
+  /* [ DONE ] for each article */
+	const articles = document.querySelectorAll(optArticleSelector);
+	for(let article of articles) {
+
+    /* [ DONE ] get the article id */
+		const articleID = article.getAttribute("id");
+		console.log('id: ' + articleID);
+	
+
+    /* [ DONE ] find the title element */
+		
+
+    /* [ DONE ] get the title from the title element */
+		const articleTitle = article.querySelector(optTitleSelector).innerHTML;
+		console.log('title: ' + articleTitle);
+
+    /* [ DONE ] create HTML of the link */
+		const articleLink = '<li><a href="#' + articleID + '"><span>' + articleTitle + '</span></a></li>';
+		console.log(articleLink);
+		console.log('-');
+		
+
+    /* insert link into titleList */
+		titleLinks.innerHTML += articleLink;
+		
+	}
+	const links = document.querySelectorAll('.titles a');
+
+	for(let link of links){
+	  link.addEventListener('click', titleClickHandler);
+	}
+
 }
+
+generateTitleLinks();
+
+
+
+
+
+// .querySelector jest w czymś lepszy w tej sytuacji? - line 30
+
 
 /* 
 tab vs double-space
