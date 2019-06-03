@@ -80,3 +80,5 @@ body {
   display: flex; }
   .post-tags p {
     margin: 0 10px 0 0; }
+  .post-tags .list li {
+    margin-right: 10px; }
