@@ -77,6 +77,51 @@ body {
   font-weight: bold;
 }
 
+.list.tags li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.list.tags .tag-size-1 {
+  font-size: 12px;
+}
+
+.list.tags .tag-size-2 {
+  font-size: 14px;
+}
+
+.list.tags .tag-size-3 {
+  font-size: 16px;
+}
+
+.list.tags .tag-size-4 {
+  font-size: 18px;
+}
+
+.list.tags .tag-size-5 {
+  font-size: 20px;
+}
+
+.list.tags .tag-size-6 {
+  font-size: 22px;
+}
+
+.list.tags .tag-size-7 {
+  font-size: 24px;
+}
+
+.list.tags .tag-size-8 {
+  font-size: 26px;
+}
+
+.list.tags .tag-size-9 {
+  font-size: 28px;
+}
+
+.list.tags .tag-size-10 {
+  font-size: 30px;
+}
+
 .list-horizontal li {
   display: inline-block;
 }
